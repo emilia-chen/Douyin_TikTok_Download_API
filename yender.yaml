@@ -1,0 +1,19 @@
+# ============================================================
+# 本文件是给「抖音解析开源后端」用的 Render 部署配置。
+# 重要：这个 render.yaml 必须放到【后端代码的 Git 仓库根目录】，
+#       也就是你 Fork 的 Evil0ctal/Douyin_TikTok_Download_API 仓库里，
+#       而不是本小程序工作空间。Render 只读取它所连接的那个仓库里的 yaml。
+# 上游仓库自带 Dockerfile（EXPOSE 80），本配置用 runtime: docker 直接构建。
+# ============================================================
+services:
+  - type: web
+    name: douyin-api
+    runtime: docker
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    env:
+      # 可选：配置出口代理，避开抖音对数据中心 IP 的风控
+      # 格式如 http://user:pass@host:port ；不需要就留空
+      PROXY: ""
