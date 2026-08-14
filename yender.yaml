@@ -13,7 +13,7 @@ services:
     dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /
-    env:
+    envVars:
       # 可选：配置出口代理，避开抖音对数据中心 IP 的风控
       # 格式如 http://user:pass@host:port ；不需要就留空
       - key: PROXY
