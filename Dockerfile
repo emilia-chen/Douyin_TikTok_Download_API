@@ -1,5 +1,5 @@
 # 使用官方 Python 3.11 的轻量版镜像
-FROM  mirrors.tencent.com/library/python:3.11-slim
+FROM  docker.m.daocloud.io/library/python:3.11-slim
 
 LABEL maintainer="Evil0ctal"
 
